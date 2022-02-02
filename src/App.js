@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './Components/Header';
+import SideBar from './Components/SideBar';
+import MakeshiftRouter from './Components/MakeshiftRouter';
+
 
 function App() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState(0);
+
+
+
+
+  console.log(isDarkMode);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header isDarkMode={isDarkMode} toggleFn={() => setIsDarkMode(!isDarkMode)} />
+      <div className={`all-content-wrap ${isDarkMode ? "dark-mode-body" : ""}`}>
+        <SideBar isDarkMode={isDarkMode} handleClick={(newRoute) => setCurrentRoute(newRoute)}/>
+        <div className="body-wrap">
+          <MakeshiftRouter currentRoute={currentRoute} isDarkMode={isDarkMode} />
+        </div>
+      </div>
     </div>
   );
 }
