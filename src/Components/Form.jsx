@@ -2,17 +2,15 @@ import React, {useState} from 'react';
 
 function Form({isDarkMode, count, addRecipe}) {
 
-
 	const [title, setTitle] = useState("");
 	const [imgUrl, setImgUrl] = useState("");
 	const [course, setCourse] = useState("");
-	const [source, setSource] = useState("");
 	const [servSize, setServSize] = useState("");
-
-	const [ingredient, setIngredient] = useState("");
-	const [ingredients, setIngredients] = useState([]);
+	
 	const [direction, setDirection] = useState("");
 	const [directions, setDirections] = useState([]);
+	const [ingredient, setIngredient] = useState("");
+	const [ingredients, setIngredients] = useState([]);
 
 	const addIngredient = (e) => {
 		e.preventDefault();
@@ -37,12 +35,14 @@ function Form({isDarkMode, count, addRecipe}) {
 	};
 
 	const resetForm = () => {
-		setTitle("");
-		setImgUrl("");
 		setCourse("Breakfast");
-		setSource("");
+		setImgUrl("");
+		setTitle("");
 		setServSize("");
+		setDirections([]);
+		setIngredients([]);
 	};
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -51,30 +51,30 @@ function Form({isDarkMode, count, addRecipe}) {
 			title,
 			imgUrl,
 			course,
-			source,
 			servSize,
 			ingredients,
 			directions,
 		};
 
-		console.log("adding recipe:", recipe);
+		console.log("Adding recipe:", recipe);
 		addRecipe(recipe);
 
 		resetForm();
-	}
-
+	};
 
 
 	return (
 
 		<div className="form-wrap">
 
+			
 			<form onSubmit={handleSubmit}>
 				<div id="form-btn-cont">
 					<button className="btn btn-secondary btn-lg" type="submit">
 						Save
 					</button>
 				</div>
+
 				{/*<label for="recipe-url">Recipe URL</label><br/>
 				<input type="text" name="recipe-url" id="recipe-url"/><br/>*/}
 				
@@ -85,7 +85,7 @@ function Form({isDarkMode, count, addRecipe}) {
 
 				<div className="mb-3">
 					<label className="form-label">Img URL:</label>
- 					<input type="text" id="img-url" name="img-url" className="form-control" value={imgUrl} onChange={(e) => handleChange(e, setImgUrl)} />
+ 					<input type="text" id="img-url" name="img-url" className="form-control" value={imgUrl} onChange={(e) => handleChange(e, setImgUrl)}/>
 				</div>
 
 				<div className="mb-3">
@@ -106,7 +106,7 @@ function Form({isDarkMode, count, addRecipe}) {
 
 				<div className="mb-3">
 					<label className="form-label">Source:</label><br/>
- 					<input className="form-control" type="text" id="source" name="source" placeholder="Optional" value={source} onChange={(e) => handleChange(e, setSource)} />
+ 					<input className="form-control" type="text" id="source" name="source" placeholder="Optional"/>
 				</div>
 
 				<div className="mb-3">
@@ -153,22 +153,23 @@ function Form({isDarkMode, count, addRecipe}) {
 				<div className="mb-3">
 					<label className="form-label">Ingredients:</label>
 					<div className="mb-3 input-group">
-						<input className="form-control" name="ingredients" value={ingredient} onChange={(e) => handleChange(e, setIngredients)} />
+						<input className="form-control" name="ingredients" value={ingredient} onChange={(e) => handleChange(e, setIngredient)} />
 	 					<button className={`plus-btn btn ${isDarkMode ? "btn-outline-light" : "btn-outline-secondary"}`} onClick={addIngredient}>
 	 						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
 							  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 							</svg>
 	 					</button>
+	 					
 					</div>
 					<ul>
-						{ingredients.map((i, idx) => <li key={idx+1}>{i}</li>)}
+						{ingredients.map((i, idx) => <li key={idx+i}>{i}</li>)}
 					</ul>
 				</div>
 
 				<div className="mb-3">
 					<label className="form-label">Directions:</label>
 					<div className="mb-3 input-group">
-						<input className="form-control" name="directions" value={direction} onChange={(e) => handleChange(e, setDirections)}/>
+						<input className="form-control" name="directions" value={direction} onChange={(e) => handleChange(e, setDirection)} />
 	 					<button className={`plus-btn btn ${isDarkMode ? "btn-outline-light" : "btn-outline-secondary"}`} onClick={addDirection}>
 	 						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
 							  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -176,7 +177,7 @@ function Form({isDarkMode, count, addRecipe}) {
 	 					</button>
 					</div>
 					<ol>
-						{directions.map((d, idx) => <li key={idx+d}>{d}</li>)}
+						{directions.map((d, idx)=> <li key={idx+d}>{d}</li>)}
 					</ol>
 				</div>
 			</form>
