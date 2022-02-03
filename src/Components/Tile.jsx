@@ -1,16 +1,19 @@
 import React, {usestate} from 'react';
 
 
-function Tile() {
+function Tile(props) {
+	const { r } = props;
 	return (
 		<div className="tile">
 			<div className="card-img-wrap img-wrap">
-				<img src="${recipe.img}"/>
+				<img src={r.imgUrl}/>
 			</div>
 
 			<div className="title tile-title-wrap">
-				<p id="${recipe.id}"</p>
+				<p>{r.title}</p>
 			</div>
 		</div>
 	);
 }
+
+export default Tile;
