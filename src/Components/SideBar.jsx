@@ -7,7 +7,7 @@ function SideBar({ handleClick, isDarkMode }) {
 
 				<div className="search-bar-wrap">
 					<input type="text" name="recipe-search" placeholder="Search Recipes" className="search input form-control" id="search-bar" />
-					<button className={`search-btn btn btn-sm ${isDarkMode ? "btn-outline-light" : "btn-outline-secondary"}`}>
+					<button className={`search-btn btn-style btn btn-sm ${isDarkMode ? "btn-outline-light dark-mode-btn" : "btn-outline-secondary"}`}>
 						<svg className="i-search icon" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
 				            <circle cx="14" cy="14" r="12" />
 				            <path d="M23 23 L30 30"  />

@@ -6,11 +6,25 @@ function Form({isDarkMode, count, addRecipe}) {
 	const [imgUrl, setImgUrl] = useState("");
 	const [course, setCourse] = useState("");
 	const [servSize, setServSize] = useState("");
+	const [source, setSource] = useState("");
+	const [prepMins, setPrepMins] = useState("");
+	const [prepHrs, setPrepHrs] = useState("");
+	const [cookMins, setCookMins] = useState("");
+	const [cookHrs, setCookHrs] = useState("");
+	const [notes, setNotes] = useState("");
+	const [id, setId] = useState("");
 	
 	const [direction, setDirection] = useState("");
 	const [directions, setDirections] = useState([]);
 	const [ingredient, setIngredient] = useState("");
 	const [ingredients, setIngredients] = useState([]);
+
+	const uuidv4 = () => {
+	  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+	    return v.toString(16);
+	  });
+	}
 
 	const addIngredient = (e) => {
 		e.preventDefault();
@@ -38,9 +52,15 @@ function Form({isDarkMode, count, addRecipe}) {
 		setCourse("Breakfast");
 		setImgUrl("");
 		setTitle("");
+		setSource("");
 		setServSize("");
+		setPrepMins("");
+		setPrepHrs("");
+		setCookMins("");
+		setCookHrs("");
 		setDirections([]);
 		setIngredients([]);
+		setNotes("");
 	};
 
 
@@ -51,9 +71,16 @@ function Form({isDarkMode, count, addRecipe}) {
 			title,
 			imgUrl,
 			course,
+			source,
 			servSize,
+			prepMins,
+			prepHrs,
+			cookMins,
+			cookHrs,
 			ingredients,
 			directions,
+			notes,
+			id: uuidv4(),
 		};
 
 		console.log("Adding recipe:", recipe);
@@ -100,61 +127,55 @@ function Form({isDarkMode, count, addRecipe}) {
 				</div>
 
 				<div className="mb-3">
-					<label className="form-label">Tags:</label><br/>
- 					<input className="form-control" type="text" id="tags" name="tags" placeholder="Vegetarian, Gluten Free..etc"/>
-				</div>
-
-				<div className="mb-3">
 					<label className="form-label">Source:</label><br/>
- 					<input className="form-control" type="text" id="source" name="source" placeholder="Optional"/>
+ 					<input className="form-control" type="text" id="source" name="source" placeholder="Optional" value={source} onChange={(e) => handleChange(e, setSource)}/>
 				</div>
 
-				<div className="mb-3">
-					<label className="form-label">Serving Size:</label><br/>
- 					<input className="form-control" type="text" id="servings" name="servings" value={servSize} onChange={(e) => handleChange(e, setServSize)}/>
-				</div>
+				<div className="mb-3 sml-inputs-cont">
+					<div className="mb-3 sml-input-cont">
+						<label id="prep-time-label" className="form-label">Serving Size:</label>
+						<div className="sml-input">
+	 						<div>
+		 						<label className="form-label"></label>
+	 							<input className="form-control" type="text" id="servings" name="servings" value={servSize} onChange={(e) => handleChange(e, setServSize)}/>
+		 					</div>
+	 					</div>
+					</div>
 
-				<div className="mb-3 times-cont">
-					<div className="mb-3 time-cont">
+					<div className="mb-3 sml-input-cont">
 						<label id="prep-time-label" className="form-label">Preperation Time:</label>
-						<div className="time-item">
+						<div className="sml-input time-cont">
 	 						<div>
 		 						<label className="form-label">Hrs.</label>
-		 						<input className="form-control" type="text" name="hrs" id="prep-hrs"/>
+		 						<input className="form-control" type="text" name="hrs" id="prep-hrs" value={prepHrs} onChange={(e) => handleChange(e, setPrepHrs)}/>
 		 					</div>
-		 					<div>
+		 					<div className="mrg-lft">
 		 						<label className="form-label">Mins.</label>
-		 						<input className="form-control" type="text" name="mins" id="prep-mins"/>
+		 						<input className="form-control" type="text" name="mins" id="prep-mins" value={prepMins} onChange={(e) => handleChange(e, setPrepMins)}/>
 		 					</div>
 	 					</div>
 					</div>
 
-					<div className="mb-3 time-cont">
+					<div className="mb-3 sml-input-cont">
 						<label id="cook-time-label" className="form-label">Cooking Time:</label>
-						<div className="time-item">
+						<div className="sml-input time-cont">
 	 						<div>
 		 						<label className="form-label">Hrs.</label>
-		 						<input className="form-control" type="text" name="hrs" id="prep-hrs"/>
+		 						<input className="form-control" type="text" name="hrs" id="cook-hrs" value={cookHrs} onChange={(e) => handleChange(e, setCookHrs)}/>
 		 					</div>
-		 					<div>
+		 					<div className="mrg-lft">
 		 						<label className="form-label">Mins.</label>
-		 						<input className="form-control" type="text" name="mins" id="prep-mins"/>
+		 						<input className="form-control" type="text" name="mins" id="cook-mins" value={cookMins} onChange={(e) => handleChange(e, setCookMins)}/>
 		 					</div>
 	 					</div>
 					</div>
 				</div>
-
-				<div className="mb-3">
-					<label className="form-label">Notes:</label><br/>
-					<textarea className="form-control" name="notes"></textarea>
-				</div>
-
 
 				<div className="mb-3">
 					<label className="form-label">Ingredients:</label>
 					<div className="mb-3 input-group">
 						<input className="form-control" name="ingredients" value={ingredient} onChange={(e) => handleChange(e, setIngredient)} />
-	 					<button className={`plus-btn btn ${isDarkMode ? "btn-outline-light" : "btn-outline-secondary"}`} onClick={addIngredient}>
+	 					<button className={`plus-btn btn btn-style ${isDarkMode ? "btn-outline-light dark-mode-btn" : "btn-outline-secondary"}`} onClick={addIngredient}>
 	 						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
 							  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 							</svg>
@@ -170,7 +191,7 @@ function Form({isDarkMode, count, addRecipe}) {
 					<label className="form-label">Directions:</label>
 					<div className="mb-3 input-group">
 						<input className="form-control" name="directions" value={direction} onChange={(e) => handleChange(e, setDirection)} />
-	 					<button className={`plus-btn btn ${isDarkMode ? "btn-outline-light" : "btn-outline-secondary"}`} onClick={addDirection}>
+	 					<button className={`plus-btn btn btn-style ${isDarkMode ? "btn-outline-light dark-mode-btn" : "btn-outline-secondary"}`} onClick={addDirection}>
 	 						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
 							  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 							</svg>
@@ -179,6 +200,11 @@ function Form({isDarkMode, count, addRecipe}) {
 					<ol>
 						{directions.map((d, idx)=> <li key={idx+d}>{d}</li>)}
 					</ol>
+				</div>
+
+				<div className="mb-3">
+					<label className="form-label">Notes:</label><br/>
+					<textarea className="form-control" name="notes" value={notes} onChange={(e) => handleChange(e, setNotes)}></textarea>
 				</div>
 			</form>
 		</div>
