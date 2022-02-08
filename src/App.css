@@ -1,3 +1,8 @@
+/*:root {
+    --primary-color: red;
+    --text-color: white;
+}*/
+
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -10,31 +15,31 @@ body,
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 #root,
 .App {
   height: 100%;
-  font-family: 'Michroma', sans-serif;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Michroma", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .all-content-wrap {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    background-color: #efefef;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background-color: #efefef;
 }
 
 /*---Search Box----*/
 .css-1orzy9s {
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 .main-wrap {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header-wrap {
@@ -48,14 +53,14 @@ body,
 header {
   width: 100%;
   height: 100%;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 header div {
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
 }
 
 .nav-title {
@@ -76,43 +81,42 @@ header div {
 }
 
 .mobile-nav-wrap {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-btn {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .nav-icon-wrap {
-    padding: 10px;
-    margin-right: 5px;
+  padding: 10px;
+  margin-right: 5px;
 }
 
 .body-wrap {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    /*margin-top: 100px;*/
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /*margin-top: 100px;*/
 }
 
-
 .side-option-wrap {
-    height: 100%;
+  height: 100%;
 }
 
 .search-bar-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
 }
 
 a {
@@ -121,7 +125,7 @@ a {
 
 a:hover {
   color: #ff5f19;
-} 
+}
 
 .side-bar-option {
   height: 50px;
@@ -137,13 +141,13 @@ a:hover {
 }
 
 .search {
-    width: 80%;
-    margin: 5px;
+  width: 80%;
+  margin: 5px;
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .search-btn {
@@ -155,53 +159,53 @@ a:hover {
 }
 
 .side-nav-text button {
-    all: unset;
-    cursor: pointer;
+  all: unset;
+  cursor: pointer;
 }
 
 .gallery-wrap {
-    margin-left: 275px;
+  margin-left: 275px;
   margin-bottom: 150px;
   height: 100%;
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .tile {
-    height: 300px;
-    max-width: 250px;
-    margin: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #aec9c7;
-    border-radius: 7px;
-    background-color: #d6e4e3;
+  height: 300px;
+  max-width: 250px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #aec9c7;
+  border-radius: 7px;
+  background-color: #d6e4e3;
 }
 
 .title a:hover {
-    color: blue;
-    cursor: pointer;
+  color: blue;
+  cursor: pointer;
 }
 
 .title p {
-    margin: 5px;
-    font-size: 1.4rem;
+  margin: 5px;
+  font-size: 1.4rem;
 }
 
 .img-wrap {
   height: 165px;
   width: 250px;
   border: 2px solid #aec9c7;
-  border-top: .05px solid #aec9c7;
+  border-top: 0.05px solid #aec9c7;
   display: flex;
   justify-content: center;
 }
 
 .card-img-wrap img {
-    object-fit: cover;
-    width: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 img {
@@ -210,86 +214,86 @@ img {
 
 .tile-title-wrap {
   height: 50%;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .tile-title-wrap:hover {
-    color: #3273dc;
-    cursor: pointer;
+  color: #3273dc;
+  cursor: pointer;
 }
 
 .btn-style {
-    background-color: #cededd;
+  background-color: #cededd;
 }
 
 /*-------Form-------------------------------------------------------*/
 
 .form-wrap,
 form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .form-wrap {
-    margin: 50px;
+  margin: 50px;
 }
 
 #form-btn-cont {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .sml-inputs-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .sml-input-cont {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .sml-input {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 35%;
 }
 
 .mrg-lft {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 #prep-mins,
-#prep-hrs  {
-    width: 75px;
+#prep-hrs {
+  width: 75px;
 }
 
 /*-------Toggle Slidder---------------------------------------------*/
 
 #toggle-wrap {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: 25%;
-    height: 100%;
-    width: 14%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: 25%;
+  height: 100%;
+  width: 14%;
 }
 
 #toggle-wrap h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: white;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
 }
 
 .slider.round {
@@ -323,8 +327,8 @@ form {
   right: 0;
   bottom: 0;
   background-color: #ff9f75;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -335,8 +339,8 @@ form {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -344,7 +348,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -353,138 +357,136 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-
-
 /*-------Recipe Card------------------------------------------------*/
 
 .recipe-card-wrap {
-    margin-right: 50px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  margin-right: 50px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .delete-btn-wrap {
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .delete-btn {
-    padding: 10px;
+  padding: 10px;
 }
 
 .rec-card-img-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
 }
 
 .rec-card-title-wrap {
-    min-height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
 }
 
 .rec-card-title {
-    margin-left: 25px;
-    font-weight: bold;
-    font-size: 2.5em;
+  margin-left: 25px;
+  font-weight: bold;
+  font-size: 2.5em;
 }
 
 .quarter-wrap {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    background-color: #cededd;
-    border: 2px solid #aec9c7;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: #cededd;
+  border: 2px solid #aec9c7;
 }
 
 .quart-column {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .quart-item {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .time-wrap {
-    margin: 5px;
+  margin: 5px;
 }
 
 .rec-card-sub-title {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 25px;
 }
 
 .head-btn-wrap {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .thirds-wrap {
-    display: flex;
-    width: 100%;
-    min-height: 250px;
-    margin: 20px;
+  display: flex;
+  width: 100%;
+  min-height: 250px;
+  margin: 20px;
 }
 
 .one-third {
-    width: 33%;
-    margin: 15px;
+  width: 33%;
+  margin: 15px;
 }
 
 .two-thirds {
-    width: 66%;
-    margin: 15px;
-    max-width: 600px;
+  width: 66%;
+  margin: 15px;
+  max-width: 600px;
 }
 
 li {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .notes-wrap {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .notes-wrap p {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 .white {
-    color: white;
+  color: white;
 }
 
 /*------------------Dark Mode---------------------*/
 
 .dark-mode-body {
-    background-color: #4c4c4c;
-    color: white;
+  background-color: #4c4c4c;
+  color: white;
 }
 
 .dark-mode-btn {
-    background-color: #8ba09f;
+  background-color: #8ba09f;
 }
 
 .dark-mode-tile {
-    background-color: #8ba09f;
+  background-color: #8ba09f;
 }
 
 /*.dark-mode-tile {
