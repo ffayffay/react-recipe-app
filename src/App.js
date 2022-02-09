@@ -1,15 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 import SideBar from "./Components/SideBar";
 import MakeshiftRouter from "./Components/MakeshiftRouter";
+import { seedRecipes } from "./seed";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [currentRoute, setCurrentRoute] = useState(0);
   const [recipes, setRecipes] = useState([]);
   const [recipeToDisplay, setRecipeToDisplay] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const addRecipe = (recipe) => setRecipes([...recipes, recipe]);
 
@@ -20,6 +22,28 @@ function App() {
     setRecipeToDisplay(foundRecipe);
     setCurrentRoute(3);
   };
+
+  const deleteRecipe = (e, idToDel) => {
+    console.log("delete recipe id", idToDel);
+    const newRecList = recipes.filter(r => r.id !== idToDel);
+    console.log("new recipe after delete:", newRecList);
+    setRecipes(newRecList);
+    setCurrentRoute(0)
+  }
+
+  useEffect(() => {
+    if (!isLoaded) {
+      // get stuff out of local storage
+      // and set it.
+      setRecipes(seedRecipes);
+      setIsLoaded(true);
+    }
+  }, [isLoaded])
+
+  useEffect(() => {
+    // set recipes in local storage
+    console.log(recipes)
+  }, [recipes])
 
   // const handleRecStorage = () => {
   //     localStorage.setItem('Recipe', recipe);
@@ -44,6 +68,7 @@ function App() {
             addRecipe={addRecipe}
             recipeToDisplay={recipeToDisplay}
             displayRecipe={displayRecipe}
+            deleteRecipe={deleteRecipe}
           />
         </div>
       </div>

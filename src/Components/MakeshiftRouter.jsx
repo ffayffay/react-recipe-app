@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./Form/Form.jsx";
 import ShoppingList from "./ShoppingList.jsx";
 import Tile from "./Tile.jsx";
-import RecipeCard from "./RecipeCard.jsx";
+import RecipeCard from "./RecipeCard/RecipeCard.jsx";
 
 function MakeshiftRouter({
   currentRoute,
@@ -11,6 +11,7 @@ function MakeshiftRouter({
   displayRecipe,
   recipes,
   addRecipe,
+  deleteRecipe,
 }) {
   switch (currentRoute) {
     case 0:
@@ -33,7 +34,7 @@ function MakeshiftRouter({
     case 2:
       return <ShoppingList />;
     case 3:
-      return <RecipeCard recipeToDisplay={recipeToDisplay} />;
+      return <RecipeCard recipeToDisplay={recipeToDisplay} deleteRecipe={deleteRecipe} />;
     default:
       return <></>;
   }

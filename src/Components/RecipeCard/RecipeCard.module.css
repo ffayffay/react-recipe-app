@@ -1,0 +1,91 @@
+/*-------Recipe Card------------------------------------------------*/
+
+.flex-column {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-card-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.rec-card-title-wrap {
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.rec-card-title {
+  margin-left: 25px;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.rec-crd-banner {
+  background-color: #aec9c7;
+  text-align: center;
+  height: 120px;
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+}
+
+.banner-item {
+  flex-direction: column;
+  height: 100%;
+}
+
+.rec-card-sub-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.head-btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thirds-wrap {
+  display: flex;
+  width: 100%;
+  min-height: 250px;
+  margin: 20px;
+}
+
+.one-third {
+  width: 33%;
+  margin: 15px;
+}
+
+.two-thirds {
+  width: 66%;
+  margin: 15px;
+  max-width: 600px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+.notes-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-wrap p {
+  max-width: 800px;
+}
+
+.white {
+  color: white;
+}
