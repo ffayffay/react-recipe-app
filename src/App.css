@@ -15,7 +15,6 @@ body,
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Quicksand", sans-serif;
 }
 
 #root,
@@ -32,35 +31,9 @@ body,
   background-color: #efefef;
 }
 
-/*---Search Box----*/
-.css-1orzy9s {
-  margin-right: 25px;
-}
-
 .main-wrap {
   display: flex;
   flex-wrap: wrap;
-}
-
-.header-wrap {
-  background-color: #aec9c7;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-header {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-header div {
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
 }
 
 .nav-title {
@@ -164,7 +137,6 @@ a:hover {
 }
 
 .gallery-wrap {
-  margin-left: 275px;
   margin-bottom: 150px;
   height: 100%;
   display: flex;
@@ -230,249 +202,10 @@ img {
   background-color: #cededd;
 }
 
-/*-------Form-------------------------------------------------------*/
 
-.form-wrap,
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
 
-.form-wrap {
-  margin: 50px;
-}
 
-#form-btn-cont {
-  align-self: flex-end;
-}
 
-.sml-inputs-cont {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.sml-input-cont {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.sml-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 35%;
-}
-
-.mrg-lft {
-  margin-left: 5px;
-}
-
-#prep-mins,
-#prep-hrs {
-  width: 75px;
-}
-
-/*-------Toggle Slidder---------------------------------------------*/
-
-#toggle-wrap {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: 25%;
-  height: 100%;
-  width: 14%;
-}
-
-#toggle-wrap h3 {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: bold;
-  color: white;
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ff9f75;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #592f1c82;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/*-------Recipe Card------------------------------------------------*/
-
-.recipe-card-wrap {
-  margin-right: 50px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.delete-btn-wrap {
-  height: 50px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.delete-btn {
-  padding: 10px;
-}
-
-.rec-card-img-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-}
-
-.rec-card-title-wrap {
-  min-height: 80px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-top: 25px;
-}
-
-.rec-card-title {
-  margin-left: 25px;
-  font-weight: bold;
-  font-size: 2.5em;
-}
-
-.quarter-wrap {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100px;
-  background-color: #cededd;
-  border: 2px solid #aec9c7;
-}
-
-.quart-column {
-  width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.quart-item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.time-wrap {
-  margin: 5px;
-}
-
-.rec-card-sub-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 25px;
-}
-
-.head-btn-wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
-.thirds-wrap {
-  display: flex;
-  width: 100%;
-  min-height: 250px;
-  margin: 20px;
-}
-
-.one-third {
-  width: 33%;
-  margin: 15px;
-}
-
-.two-thirds {
-  width: 66%;
-  margin: 15px;
-  max-width: 600px;
-}
-
-li {
-  margin-bottom: 15px;
-}
-
-.notes-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.notes-wrap p {
-  max-width: 800px;
-}
-
-.white {
-  color: white;
-}
 
 /*------------------Dark Mode---------------------*/
 

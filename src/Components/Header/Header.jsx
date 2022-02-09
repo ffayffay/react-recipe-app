@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ToggleSwitch from "./ToggleSwitch.jsx";
+import styles from "./Header.module.css";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch.jsx";
 
 function Header({ isDarkMode, toggleFn }) {
-  console.log("darkmode:", isDarkMode);
   return (
-    <div className="header-wrap">
+    <div className={`${styles["header-wrap"]}`}>
       <header>
         <div className=" white">
           <h1>Recipe Catalog</h1>

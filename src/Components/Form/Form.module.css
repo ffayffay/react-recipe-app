@@ -1,4 +1,23 @@
-.white {
+/* .white {
   background-color: var(--primary-color);
   color: var(--text-color);
+} */
+
+
+/*-------Form-------------------------------------------------------*/
+
+.form-wrap,
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.form-wrap {
+  margin: 50px;
+}
+
+.align-flx-end {
+  align-self: flex-end;
 }

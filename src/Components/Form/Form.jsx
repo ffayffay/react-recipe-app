@@ -93,9 +93,9 @@ function Form({ isDarkMode, count, addRecipe }) {
   };
 
   return (
-    <div className="form-wrap">
+    <div className={`container-sm ${styles["form-wrap"]}`}>
       <form onSubmit={handleSubmit}>
-        <div id="form-btn-cont">
+        <div className={`${styles["align-flx-end"]}`}>
           <button
             className={`btn btn-secondary btn-lg ${styles["white"]}`}
             type="submit"
@@ -131,21 +131,37 @@ function Form({ isDarkMode, count, addRecipe }) {
           />
         </div>
 
-        <div className="mb-3">
-          <label className="form-label">Course:</label>
-          <select
-            className="form-select"
-            name="course"
-            id="course"
-            value={course}
-            onChange={(e) => handleChange(e, setCourse)}
-          >
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Snack">Snack</option>
-            <option value="Dessert">Dessert</option>
-          </select>
+        <div className="row">
+          <div className="mb-3 col">
+            <label className="form-label">Course:</label>
+            <select
+              className="form-select"
+              name="course"
+              id="course"
+              value={course}
+              onChange={(e) => handleChange(e, setCourse)}
+            >
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Snack">Snack</option>
+              <option value="Dessert">Dessert</option>
+            </select>
+          </div>
+
+          <div className="mb-3 col">
+            <label id="prep-time-label" className="form-label">
+              Serving Size:
+            </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  id="servings"
+                  name="servings"
+                  value={servSize}
+                  onChange={(e) => handleChange(e, setServSize)}
+                />
+          </div>
         </div>
 
         <div className="mb-3">
@@ -162,49 +178,30 @@ function Form({ isDarkMode, count, addRecipe }) {
           />
         </div>
 
-        <div className="mb-3 sml-inputs-cont">
-          <div className="mb-3 sml-input-cont">
-            <label id="prep-time-label" className="form-label">
-              Serving Size:
-            </label>
-            <div className="sml-input">
-              <div>
-                <label className="form-label"></label>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="servings"
-                  name="servings"
-                  value={servSize}
-                  onChange={(e) => handleChange(e, setServSize)}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-3 sml-input-cont">
+        <div className="mb-3 row">
+          <div className="mb-3 col">
             <label id="prep-time-label" className="form-label">
               Preperation Time:
             </label>
-            <div className="sml-input time-cont">
-              <div>
-                <label className="form-label">Hrs.</label>
+            <div className="sml-input row">
+              <div className="col">
                 <input
                   className="form-control"
                   type="text"
                   name="hrs"
                   id="prep-hrs"
+                  placeholder="Hrs."
                   value={prepHrs}
                   onChange={(e) => handleChange(e, setPrepHrs)}
                 />
               </div>
-              <div className="mrg-lft">
-                <label className="form-label">Mins.</label>
+              <div className="col">
                 <input
                   className="form-control"
                   type="text"
                   name="mins"
                   id="prep-mins"
+                  placeholder="Mins."
                   value={prepMins}
                   onChange={(e) => handleChange(e, setPrepMins)}
                 />
@@ -212,29 +209,29 @@ function Form({ isDarkMode, count, addRecipe }) {
             </div>
           </div>
 
-          <div className="mb-3 sml-input-cont">
+          <div className="mb-3 col">
             <label id="cook-time-label" className="form-label">
               Cooking Time:
             </label>
-            <div className="sml-input time-cont">
-              <div>
-                <label className="form-label">Hrs.</label>
+            <div className="sml-input row">
+              <div className="col">
                 <input
                   className="form-control"
                   type="text"
                   name="hrs"
                   id="cook-hrs"
+                  placeholder="Hrs."
                   value={cookHrs}
                   onChange={(e) => handleChange(e, setCookHrs)}
                 />
               </div>
-              <div className="mrg-lft">
-                <label className="form-label">Mins.</label>
+              <div className="col">
                 <input
                   className="form-control"
                   type="text"
                   name="mins"
                   id="cook-mins"
+                  placeholder="Mins."
                   value={cookMins}
                   onChange={(e) => handleChange(e, setCookMins)}
                 />
