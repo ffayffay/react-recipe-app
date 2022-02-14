@@ -1,10 +1,10 @@
-import React, { usestate } from "react";
+import React from "react";
 
 function Tile({ displayRecipe, r, tile, isDarkMode }) {
   return (
     <div className={`tile ${isDarkMode ? "dark-mode-tile" : ""}`}>
       <div className="card-img-wrap img-wrap">
-        <img src={r.imgUrl} />
+        <img src={r.imgUrl} alt={r.title} />
       </div>
 
       <div className="title tile-title-wrap">

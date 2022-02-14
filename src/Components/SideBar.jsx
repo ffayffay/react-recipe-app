@@ -1,17 +1,33 @@
 import React from "react";
+import SearchInput from "./SearchInput/SearchInput";
 
-function SideBar({ handleClick, isDarkMode }) {
+function SideBar({
+  navigate,
+  isDarkMode,
+  searchRecipes,
+  searchCriteria,
+  setSearchCriteria,
+}) {
+  const handleClickHome = () => {
+    navigate(0);
+  };
+
   return (
     <div className="side-option-wrap">
-      <div className="search-bar-wrap">
+      <SearchInput isDarkMode={isDarkMode} searchRecipes={searchRecipes} searchCriteria={searchCriteria} setSearchCriteria={setSearchCriteria}/>
+      {/* <div className="search-bar-wrap">
         <input
           type="text"
           name="recipe-search"
           placeholder="Search Recipes"
           className="search input form-control"
           id="search-bar"
-        />
+          value={searchCriteria}
+          onChange={(e) => setSearchCriteria(e.target.value)}
+        ></input>
+        <button className="input-group-text" onClick={() => setSearchCriteria("")}>X</button>
         <button
+          onClick={searchRecipes}
           className={`search-btn btn-style btn btn-sm ${
             isDarkMode
               ? "btn-outline-light dark-mode-btn"
@@ -33,7 +49,7 @@ function SideBar({ handleClick, isDarkMode }) {
             <path d="M23 23 L30 30" />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       <div className="side-bar-option">
         <div className="icon-wrap">
@@ -52,7 +68,7 @@ function SideBar({ handleClick, isDarkMode }) {
           </svg>
         </div>
         <div className="side-nav-text">
-          <button onClick={() => handleClick(1)}>Add New Recipe</button>
+          <button onClick={() => navigate(1)}>Add New Recipe</button>
         </div>
       </div>
 
@@ -70,7 +86,7 @@ function SideBar({ handleClick, isDarkMode }) {
           </svg>
         </div>
         <div className="side-nav-text">
-          <button onClick={() => handleClick(0)}>Home</button>
+          <button onClick={handleClickHome}>Home</button>
         </div>
       </div>
 
@@ -91,7 +107,7 @@ function SideBar({ handleClick, isDarkMode }) {
           </svg>
         </div>
         <div className="side-nav-text">
-          <button onClick={() => handleClick(2)}>Shopping List</button>
+          <button onClick={() => navigate(2)}>Shopping List</button>
         </div>
       </div>
     </div>

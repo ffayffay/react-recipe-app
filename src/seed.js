@@ -82,7 +82,8 @@ export const seedRecipes = [
   },
   {
     title: "Apple Blondies with Caramel Glaze",
-    imgUrl: "https://kitchenfunwithmy3sons.com/wp-content/uploads/2019/08/Apple-Blondies-3-700x700.jpg",
+    imgUrl:
+      "https://kitchenfunwithmy3sons.com/wp-content/uploads/2019/08/Apple-Blondies-3-700x700.jpg",
     course: "",
     source: "",
     servSize: "4",
@@ -94,5 +95,38 @@ export const seedRecipes = [
     directions: ["do stuff", "add and mix things", "put a nut on it"],
     notes: "",
     id: "b2f75623-d78b-4ade-aafd-aafe4e90ebb9",
+  },
+
+  {
+    title: "Peaches and Cream Popsicles",
+    imgUrl:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F77%2Fb1%2Fb5%2F77b1b5fd4f01efd38004c5d3a103863b.jpg&f=1&nofb=1",
+    course: "Snack",
+    source: 'Duck Duck Go search "pretty recipes"',
+    servSize: "12",
+    prepMins: "15",
+    prepHrs: "0",
+    cookMins: "32",
+    cookHrs: "0",
+    ingredients: [
+      "peaches",
+      "cream",
+      "sugar",
+      "popsicle sticks",
+      "a freezer",
+      "popsicle tray",
+      "love",
+    ],
+    directions: [
+      "peel peaches",
+      "chop peaches",
+      "mix with cream and sugar. heat on stove till all mixed and delicious",
+      "pour into popsicle tray",
+      "add stick",
+      "freeze em up",
+      "wait",
+    ],
+    notes: "popsicles are a great summer snack",
+    id: "71f65f40-d8d2-490a-9bee-a8a090c4ae3a",
   },
 ];

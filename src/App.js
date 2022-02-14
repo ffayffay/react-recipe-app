@@ -10,8 +10,11 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [currentRoute, setCurrentRoute] = useState(0);
   const [recipes, setRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [recipeToDisplay, setRecipeToDisplay] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [searchCriteria, setSearchCriteria] = useState("");
+  const [shopList, setShopList] = useState([]);
 
   const addRecipe = (recipe) => setRecipes([...recipes, recipe]);
 
@@ -23,27 +26,53 @@ function App() {
     setCurrentRoute(3);
   };
 
+  const getIngredients = (array) => {
+    const ings = [...shopList, ...array];
+    console.log("ings", ings);
+    setShopList(ings);
+  };
+
+  const deleteIng = (e, idToDel) => {
+    console.log("got ing id", idToDel);
+    const newShopList = shopList.filter((i) => i !== idToDel)
+    setShopList(newShopList)
+  };
+
   const deleteRecipe = (e, idToDel) => {
-    console.log("delete recipe id", idToDel);
-    const newRecList = recipes.filter(r => r.id !== idToDel);
-    console.log("new recipe after delete:", newRecList);
+    const newRecList = recipes.filter((r) => r.id !== idToDel);
     setRecipes(newRecList);
-    setCurrentRoute(0)
-  }
+    setCurrentRoute(0);
+  };
+
+  const searchRecipes = () => {
+    if (searchCriteria === "") {
+      setFilteredRecipes(recipes);
+      return;
+    }
+    const foundRecipes = recipes.filter((r) =>
+      r.title.toLowerCase().includes(searchCriteria)
+    );
+    console.log("found recipe to match search", foundRecipes);
+    setFilteredRecipes(foundRecipes);
+  };
 
   useEffect(() => {
     if (!isLoaded) {
       // get stuff out of local storage
       // and set it.
       setRecipes(seedRecipes);
+      setFilteredRecipes(seedRecipes);
       setIsLoaded(true);
     }
-  }, [isLoaded])
+  }, [isLoaded]);
 
   useEffect(() => {
-    // set recipes in local storage
-    console.log(recipes)
-  }, [recipes])
+    if (searchCriteria === "") setFilteredRecipes(recipes);
+  }, [searchCriteria, recipes]);
+
+  useEffect(() => {
+    setFilteredRecipes(recipes);
+  }, [currentRoute, setSearchCriteria, recipes]);
 
   // const handleRecStorage = () => {
   //     localStorage.setItem('Recipe', recipe);
@@ -58,17 +87,24 @@ function App() {
       <div className={`all-content-wrap ${isDarkMode ? "dark-mode-body" : ""}`}>
         <SideBar
           isDarkMode={isDarkMode}
-          handleClick={(newRoute) => setCurrentRoute(newRoute)}
+          currentRoute={currentRoute}
+          navigate={(newRoute) => setCurrentRoute(newRoute)}
+          searchRecipes={searchRecipes}
+          searchCriteria={searchCriteria}
+          setSearchCriteria={setSearchCriteria}
         />
         <div className="body-wrap">
           <MakeshiftRouter
             currentRoute={currentRoute}
             isDarkMode={isDarkMode}
-            recipes={recipes}
+            recipes={filteredRecipes}
             addRecipe={addRecipe}
             recipeToDisplay={recipeToDisplay}
             displayRecipe={displayRecipe}
             deleteRecipe={deleteRecipe}
+            getIngredients={getIngredients}
+            shopList={shopList}
+            deleteIng={deleteIng}
           />
         </div>
       </div>

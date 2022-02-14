@@ -1,0 +1,23 @@
+.outer-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 100%;
+}
+
+.x-cont {
+  height: auto;
+  right: 15px;
+  position: relative;
+  font-weight: bold;
+}
+
+.x-cont:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.hide {
+  visibility: hidden;
+}
