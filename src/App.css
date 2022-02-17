@@ -107,6 +107,7 @@ a:hover {
   display: flex;
   align-items: center;
   margin-top: 15px;
+  color: #4c4c4c;
 }
 
 .icon-wrap {
@@ -154,6 +155,7 @@ a:hover {
   align-items: center;
   border: 2px solid #aec9c7;
   border-radius: 7px;
+  color: #4c4c4c;
   background-color: #d6e4e3;
 }
 

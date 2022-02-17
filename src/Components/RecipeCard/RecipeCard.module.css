@@ -1,5 +1,11 @@
 /*-------Recipe Card------------------------------------------------*/
 
+.card-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flex-column {
   justify-content: center;
   align-items: center;
@@ -23,7 +29,7 @@
 }
 
 .rec-card-title {
-  margin-left: 25px;
+  margin: 15px;
   font-weight: bold;
   font-size: 2.5em;
 }
@@ -35,7 +41,9 @@
   display: flex;
   text-align: center;
   padding: 10px;
-  width: 80%;
+  width: 100%;
+  border-radius: 10px;
+  color: #4c4c4c;
 }
 
 .banner-item {
@@ -43,10 +51,18 @@
   height: 100%;
 }
 
-.rec-card-sub-title {
+.banner-item-div {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  align-items: end;
+}
+
+.sub-title {
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .head-btn-wrap {
@@ -88,4 +104,20 @@ li {
 
 .white {
   color: white;
+}
+
+.delete-btn {
+  align-self: flex-end;
+}
+
+.margin-t-b {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

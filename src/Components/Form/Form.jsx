@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
 
-function Form({ isDarkMode, count, addRecipe }) {
+function Form({ isDarkMode, addRecipe }) {
   const [title, setTitle] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [course, setCourse] = useState("");
@@ -86,9 +86,7 @@ function Form({ isDarkMode, count, addRecipe }) {
       id: uuidv4(),
     };
 
-    console.log("Adding recipe:", recipe);
     addRecipe(recipe);
-
     resetForm();
   };
 
@@ -97,7 +95,7 @@ function Form({ isDarkMode, count, addRecipe }) {
       <form onSubmit={handleSubmit}>
         <div className={`${styles["align-flx-end"]}`}>
           <button
-            className={`btn btn-secondary btn-lg ${styles["white"]}`}
+            className={`btn btn-secondary btn-lg btn-outline-light ${styles["white"]}`}
             type="submit"
           >
             Save

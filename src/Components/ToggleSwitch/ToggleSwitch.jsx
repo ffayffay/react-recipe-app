@@ -10,7 +10,7 @@ function ToggleSwitch({ isDarkMode, toggleFn }) {
       <h3>Dark Mode</h3>
       <div id="toggle">
         <label className={`${styles["switch"]}`}>
-          <input type="checkbox" onClick={toggleFn} />
+          <input type="checkbox" onChange={toggleFn} checked={isDarkMode} />
           <span className={`${styles["slider"]} ${styles["round"]}`}></span>
         </label>
       </div>
