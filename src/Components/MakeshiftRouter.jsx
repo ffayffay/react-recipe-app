@@ -11,10 +11,11 @@ function MakeshiftRouter({
   displayRecipe,
   recipes,
   addRecipe,
+  handleRecStorage,
   deleteRecipe,
   getIngredients,
   shopList,
-  deleteIng
+  deleteIng,
 }) {
   switch (currentRoute) {
     case 0:

@@ -34,8 +34,8 @@ function App() {
 
   const deleteIng = (e, idToDel) => {
     console.log("got ing id", idToDel);
-    const newShopList = shopList.filter((i) => i !== idToDel)
-    setShopList(newShopList)
+    const newShopList = shopList.filter((i) => i !== idToDel);
+    setShopList(newShopList);
   };
 
   const deleteRecipe = (e, idToDel) => {
@@ -56,12 +56,30 @@ function App() {
     setFilteredRecipes(foundRecipes);
   };
 
+  const getRecStorage = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  };
+
+
   useEffect(() => {
     if (!isLoaded) {
       // get stuff out of local storage
       // and set it.
-      setRecipes(seedRecipes);
-      setFilteredRecipes(seedRecipes);
+      const storedRec = getRecStorage("Recipe") || [];
+      const darkMode = getRecStorage("isDarkMode") || false;
+      const storedShopList = getRecStorage("shopList") || [];
+
+      setIsDarkMode(darkMode);
+      setShopList(storedShopList);
+
+      if (storedRec.length) {
+        setRecipes(storedRec);
+        setFilteredRecipes(storedRec);
+      } else {
+        setRecipes(seedRecipes);
+        setFilteredRecipes(seedRecipes);
+      }
+
       setIsLoaded(true);
     }
   }, [isLoaded]);
@@ -74,10 +92,18 @@ function App() {
     setFilteredRecipes(recipes);
   }, [currentRoute, setSearchCriteria, recipes]);
 
-  // const handleRecStorage = () => {
-  //     localStorage.setItem('Recipe', recipe);
-  //  };
+  useEffect(() => {
+    localStorage.setItem("Recipe", JSON.stringify(recipes));
+  }, [recipes]);
 
+  useEffect(() => {
+    localStorage.setItem("isDarkMode", isDarkMode);
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    localStorage.setItem("shopList", JSON.stringify(shopList))
+  }, [shopList]);
+ 
   return (
     <div className="App">
       <Header
