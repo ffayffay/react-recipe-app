@@ -1,0 +1,54 @@
+.tile {
+  height: 300px;
+  max-width: 250px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #aec9c7;
+  border-radius: 7px;
+  color: #4c4c4c;
+  background-color: #d6e4e3;
+}
+
+.title a:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.title p {
+  margin: 5px;
+  font-size: 1.4rem;
+}
+
+.img-wrap {
+  height: 165px;
+  width: 250px;
+  border: 2px solid #aec9c7;
+  border-top: 0.05px solid #aec9c7;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img-wrap img {
+  object-fit: cover;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+}
+
+.tile-title-wrap {
+  height: 50%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.tile-title-wrap:hover {
+  color: #3273dc;
+  cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form/Form.jsx";
 import ShoppingList from "./ShoppingList/ShoppingList.jsx";
-import Tile from "./Tile.jsx";
+import Tile from "./Tile/Tile.jsx";
 import RecipeCard from "./RecipeCard/RecipeCard.jsx";
 
 function MakeshiftRouter({
