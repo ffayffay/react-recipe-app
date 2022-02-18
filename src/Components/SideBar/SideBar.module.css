@@ -1,0 +1,63 @@
+.side-option-wrap {
+  height: 100%;
+}
+
+.search-bar-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #ff5f19;
+}
+
+.side-bar-option {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.icon-wrap {
+  display: flex;
+  margin-left: 5px;
+}
+
+.search {
+  width: 80%;
+  margin: 5px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.search-btn {
+  margin-right: 5px;
+}
+
+.side-nav-text {
+  margin-left: 15px;
+}
+
+.side-nav-text button {
+  all: unset;
+  cursor: pointer;
+}
+
+.white {
+  color: white;
+}
+
+.gray {
+  color: #4c4c4c;
+}

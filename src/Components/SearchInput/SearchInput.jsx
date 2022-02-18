@@ -33,8 +33,8 @@ function SearchInput({
         <svg
           className="i-search icon"
           viewBox="0 0 32 32"
-          width="64"
-          height="64"
+          width="32"
+          height="32"
           fill="none"
           stroke="currentcolor"
           strokeLinecap="round"
