@@ -8,19 +8,30 @@ function SideBar({
   searchRecipes,
   searchCriteria,
   setSearchCriteria,
+  currentRoute,
 }) {
   const handleClickHome = () => {
     navigate(0);
   };
 
   return (
-    <div className={`${styles["side-option-wrap"]} ${isDarkMode ? styles["white"] : styles["gray"]}`}>
-      <SearchInput
-        isDarkMode={isDarkMode}
-        searchRecipes={searchRecipes}
-        searchCriteria={searchCriteria}
-        setSearchCriteria={setSearchCriteria}
-      />
+    <div
+      className={`${styles["side-option-wrap"]} ${
+        isDarkMode ? styles["white"] : styles["gray"]
+      }`}
+    >
+      {
+        currentRoute === 0 ? (
+          <SearchInput
+            isDarkMode={isDarkMode}
+            searchRecipes={searchRecipes}
+            searchCriteria={searchCriteria}
+            setSearchCriteria={setSearchCriteria}
+          />
+        ) : (
+          ""
+        )
+      }
 
       <div className={`${styles["side-bar-option"]}`}>
         <div className={`${styles["icon-wrap"]}`}>
